@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import {Button} from "./components/Button"
+import { ButtonClass } from "./components/ButtonClass";
 import './App.css';
 
 function App() {
+  function handleSubmit () {
+    console.log("I am submitted")
+  }
+
+  function handleClear () {
+    console.log("I am cleared")
+  }
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Button label = 'submit' handleClick={handleSubmit}/>
+      <Button label = 'clear' handleClick={handleClear}/>
+      <Button />
+      <ButtonClass label = 'submit class' handleClick={handleSubmit}/>
+      <ButtonClass label = 'clear class' handleClick={handleClear}/>
+      <ButtonClass />
     </div>
   );
 }
